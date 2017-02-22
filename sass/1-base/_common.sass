@@ -1,0 +1,48 @@
+// COMMON
+
+
+body
+  font-family: $stack-sans
+  font-size: $base-size
+  background: $pe-light
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+.brand
+  +hide-text
+  background-image:  url("../images/pe-logo-square.svg")
+  background-repeat:  no-repeat
+  background-position: center center
+  width: 120px
+  height: 120px
+  margin: $gutter auto
+
+h1
+  font-family: $stack-headings
+  font-size: 3rem
+  font-weight: 900
+  line-height: 1rem
+  letter-spacing: -.5px
+
+h2
+  @extend h1
+  font-size: $base-size * 2
+
+h3
+  @extend h1
+  font-size: $base-size * 1.4
+
+.upper-case
+  text-transform: uppercase
+
+h1.open, h2.open, h3.open
+  font-family: $stack-sans
+  letter-spacing: -.75px
+
+section
+  +clearfix
+
+footer
+  text-align: center
+  color: lighten($pe-dark, 15%)
