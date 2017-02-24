@@ -4,18 +4,19 @@ header
   //text-align: center
 
 .home.container
-  +outer-container(1280px)
+  max-width: 80em
+  //+outer-container(1280px)
   padding: $gutter
   //width: $content-width
   margin: $gutter auto
   box-sizing: border-box
   background: $white
-  +media(max-width 640px)
-      background: $lime
+  //+media(max-width 640px)
+      //background: $lime
 
   //+cascade($pink)
 
-article
-  +columns(3 200px)
-  +column-rule(solid 1px #ccc)
-  +column-gap($gutter + 10)
+//article
+  //+columns(3 200px)
+  //+column-rule(solid 1px #ccc)
+  //+column-gap($gutter)

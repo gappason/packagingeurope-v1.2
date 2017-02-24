@@ -2329,12 +2329,6 @@
   clip: auto; }
 
 /* PLUGINS */
-html {
-  box-sizing: border-box; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
 /* BASE STYLES */
 body {
   font-family: "open sans", Helvetica, Arial, sans-serif;
@@ -2353,7 +2347,7 @@ body {
   background-position: center center;
   width: 120px;
   height: 120px;
-  margin: 30px auto; }
+  margin: 2rem auto; }
 
 h1, h2, h3 {
   font-family: "nimbus-sans-condensed", "open sans", Helvetica, Arial, sans-serif;
@@ -2385,7 +2379,7 @@ footer {
   color: #484848; }
 
 /* LAYOUTS */
-header.header-home {
+.home header {
   text-align: center; }
 
 .my-icon {
@@ -2396,31 +2390,80 @@ header.header-home {
   transform: scale(-1, 1); }
 
 .home.container {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 30px;
-  margin: 30px auto;
+  max-width: 80em;
+  padding: 2rem;
+  margin: 2rem auto;
   box-sizing: border-box;
   background: #fff; }
-  .home.container::after {
+
+.home.header {
+  width: 100%;
+  background-color: white;
+  min-height: 7.5em;
+  background-image: linear-gradient(to right, rgba(0, 212, 255, 0.25), rgba(0, 212, 255, 0.25) 20px, transparent 20px, transparent calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px + 20px), transparent calc(25% - 25px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px + 20px), transparent calc(50% - 30px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px + 20px), transparent calc(75% - 35px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100%)); }
+  .home.header::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .home.header .logo-container {
+    width: calc(8.33333% - 21.66667px);
+    float: left;
+    margin-left: 20px; }
+    .home.header .logo-container img {
+      width: 100%; }
+
+.home.section {
+  margin: 0 auto;
+  text-align: center; }
+  .home.section::after {
     clear: both;
     content: "";
     display: table; }
-  @media screen and (max-width: 640px) {
-    .home.container {
-      background: lime; } }
+  .home.section .test-content {
+    background-image: linear-gradient(to right, rgba(0, 212, 255, 0.25), rgba(0, 212, 255, 0.25) 20px, transparent 20px, transparent calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px + 20px), transparent calc(25% - 25px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px + 20px), transparent calc(50% - 30px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px + 20px), transparent calc(75% - 35px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100%));
+    width: calc(100% - 40px);
+    float: left;
+    margin-left: 20px;
+    border: 1px solid #f1f1f1;
+    margin: 4em auto;
+    color: #f1f1f1;
+    background-color: transparent; }
+    .home.section .test-content::after {
+      clear: both;
+      content: "";
+      display: block; }
+    .home.section .test-content .test-content-inner {
+      box-sizing: border-box;
+      background-image: linear-gradient(to right, rgba(0, 212, 255, 0.25), rgba(0, 212, 255, 0.25) 20px, transparent 20px, transparent calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px + 20px), transparent calc(25% - 25px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px + 20px), transparent calc(50% - 30px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px + 20px), transparent calc(75% - 35px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100%));
+      width: calc(25% - 25px);
+      float: left;
+      margin-left: 20px;
+      min-height: 300px;
+      background-color: #222;
+      padding: 2em;
+      margin: 1em 0 0; }
 
-article {
-  -webkit-columns: 3 200px;
-  -moz-columns: 3 200px;
-  columns: 3 200px;
-  -webkit-column-rule: solid 1px #ccc;
-  -moz-column-rule: solid 1px #ccc;
-  column-rule: solid 1px #ccc;
-  -webkit-column-gap: 40px;
-  -moz-column-gap: 40px;
-  column-gap: 40px; }
+.home.content {
+  background-image: linear-gradient(to right, rgba(0, 212, 255, 0.25), rgba(0, 212, 255, 0.25) 20px, transparent 20px, transparent calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px + 20px), transparent calc(25% - 25px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px + 20px), transparent calc(50% - 30px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px + 20px), transparent calc(75% - 35px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100%));
+  width: calc(100% - 40px);
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 3em; }
+  .home.content::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .home.content article {
+    width: calc(66.66667% - 33.33333px);
+    float: left;
+    margin-left: 20px;
+    margin-left: calc(0% - 20px + 40px);
+    background-color: rgba(241, 241, 241, 0.5); }
+  .home.content aside {
+    width: calc(33.33333% - 26.66667px);
+    float: left;
+    margin-left: 20px;
+    background: #d20001; }
 
 /* MODULES */
 .boxes {
@@ -2443,7 +2486,7 @@ article {
     box-sizing: border-box;
     text-align: center;
     line-height: 100px;
-    margin: 0 30px 0 0; }
+    margin: 0 2rem 0 0; }
     .boxes .box:last-child {
       margin-right: 0; }
     .boxes .box:hover {

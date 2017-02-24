@@ -1,0 +1,59 @@
+$neat-custom-grid: (12, 0px, 800px, $pe-dark, ltr) !default
+
+
+$other-custom-grid-for-print: (columns: 14, gutter: 1.5rem, media: print)
+
+
+
+$border:  1px solid $pe-light
+
+.home.section
+  margin: 0 auto
+  text-align: center
+  +clearfix
+  .test-content
+    +grid-container
+    +grid-visual
+    +grid-column(12)
+    //min-height: 400px
+    //max-width: 60em
+    border: $border
+    margin: 4em auto
+    color: $pe-light
+    background-color: transparent
+    //padding: 2em
+
+    .test-content-inner
+      box-sizing: border-box
+      +grid-visual
+      +grid-column(3)
+      //+grid-push(0)
+      min-height: 300px
+      background-color: $pe-dark
+      padding: 2em
+      margin: 1em 0 0
+
+
+
+
+
+.home.content
+  +grid-container
+  +grid-visual
+  +grid-column(12)
+  margin-bottom: 3em
+  article
+    +grid-column(8)
+    +grid-push(0)
+    background-color: rgba($pe-light, .5)
+  aside
+    +grid-column(4)
+    background: $pe-red
+    //+span-columns(4)
+
+    //+media($medium-screen)
+      //+span-columns(2)
+
+
+    //+media($small-screen)
+      //+span-columns(12)
