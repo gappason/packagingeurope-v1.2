@@ -2398,19 +2398,83 @@ footer {
 
 .home.header {
   width: 100%;
-  background-color: white;
-  min-height: 7.5em;
-  background-image: linear-gradient(to right, rgba(0, 212, 255, 0.25), rgba(0, 212, 255, 0.25) 20px, transparent 20px, transparent calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px + 20px), transparent calc(25% - 25px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px + 20px), transparent calc(50% - 30px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px + 20px), transparent calc(75% - 35px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100%)); }
+  background-color: #222;
+  height: 6.25em; }
   .home.header::after {
     clear: both;
     content: "";
     display: block; }
   .home.header .logo-container {
-    width: calc(8.33333% - 21.66667px);
+    width: calc(16.66667% - 23.33333px);
     float: left;
     margin-left: 20px; }
     .home.header .logo-container img {
-      width: 100%; }
+      max-width: 120px; }
+  .home.header .mobile-nav {
+    display: none; }
+    .home.header .mobile-nav a {
+      color: #f1f1f1; }
+    @media (min-width: 995px) and (max-width: 1440px) {
+      .home.header .mobile-nav {
+        display: flex; } }
+    @media (min-width: 1440px) and (max-width: 9999px) {
+      .home.header .mobile-nav {
+        display: flex; } }
+  .home.header .home.navigation {
+    width: calc(83.33333% - 36.66667px);
+    float: left;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column; }
+    .home.header .home.navigation ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end; }
+      .home.header .home.navigation ul li {
+        margin: 0; }
+    .home.header .home.navigation .top-nav ul li a {
+      color: #999;
+      text-decoration: none;
+      font-size: .8rem;
+      margin: 0 .3em; }
+    .home.header .home.navigation .top-nav ul li:first-child {
+      margin-right: 1.5em; }
+    .home.header .home.navigation .top-nav ul li i {
+      margin-right: 0.5em; }
+    .home.header .home.navigation .main-nav {
+      margin-left: -20px;
+      margin-right: -20px;
+      width: calc(100% + 40px); }
+      .home.header .home.navigation .main-nav ul {
+        display: flex;
+        flex-direction: row;
+        margin: 0; }
+        .home.header .home.navigation .main-nav ul li a {
+          font-family: "Montserrat", "open sans", Helvetica, Arial, sans-serif;
+          text-transform: uppercase;
+          font-style: normal;
+          font-size: .675em;
+          color: #f1f1f1;
+          text-decoration: none;
+          position: relative;
+          padding: 1.75em 2em 1.6em;
+          z-index: 0;
+          background: #222;
+          line-height: 1;
+          display: inline-block;
+          vertical-align: middle;
+          cursor: pointer;
+          transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+          border-right: 1px solid #3c3c3c; }
+          .home.header .home.navigation .main-nav ul li a:hover {
+            background: #f1f1f1;
+            color: #222; }
+  @media (min-width: 690px) and (max-width: 995px) {
+    .home.header {
+      width: calc(8.33333% - 21.66667px);
+      float: left;
+      margin-left: 20px; } }
 
 .home.section {
   margin: 0 auto;
@@ -2572,3 +2636,44 @@ button:active, input[type="button"]:active, input[type="reset"]:active, input[ty
   position: relative;
   top: 2px;
   left: -2px; }
+
+.btn-container {
+  opacity: 1; }
+  .btn-container .pe-btn {
+    font-family: "Montserrat", "open sans", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    color: #222;
+    text-decoration: none;
+    position: relative;
+    padding: 1.75em 2em 1.6em;
+    z-index: 0;
+    background: #fff;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    /*need to fix the breakpoints issue*/ }
+    .btn-container .pe-btn:hover {
+      background: #222;
+      color: #fff; }
+  .btn-container .pe-btn.-flat.-dark {
+    border-color: #222; }
+    .btn-container .pe-btn.-flat.-dark::after {
+      background: #222;
+      color: #f1f1f1; }
+  .btn-container .pe-btn.-flat.-mid {
+    border-color: #999; }
+  .btn-container .pe-btn.-flat {
+    border-radius: 0px;
+    min-width: 7.1em;
+    border: 1px solid #f1f1f1;
+    font-size: 10.4px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    /*need to fix the breakpoints issue*/ }
+    .btn-container .pe-btn.-flat:hover {
+      border: 1px solid #222; }

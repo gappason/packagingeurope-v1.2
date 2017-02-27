@@ -1,10 +1,88 @@
+//$screen: "only screen"
+//$mobile: "only screen and (max-width:#{$mobile-screen})"
+//$tablet: "only screen and (min-width:#{$mobile-screen}) and (max-width: #{$tablet-screen})"
+//$desktop: "only screen and (min-width:#{$tablet-screen})"
+//$landscape: "only screen and (orientation: landscape)"
+//$portrait: "only screen and (orientation: portrait)"
+$mob-only: 0 $mobile-screen
+$mob-tab: $mobile-screen $tablet-screen
+$tab-desk: $tablet-screen $desktop-screen
+$wide: $desktop-screen 9999px
+
+
 .home.header
+  //+grid-visual
   width: 100%
-  background-color: rgba($white, 1)
-  min-height: 7.5em
+  background-color: $pe-dark
+  height: 6.25em
   +grid-container
-  +grid-visual
   .logo-container
-    +grid-column(1)
+    +grid-column(2)
     img
-      width: 100%
+      max-width: 120px
+  .mobile-nav
+    display: none
+    a
+      color: $pe-light
+
+    +breakpoint($tab-desk)
+      display: flex
+    +breakpoint($wide)
+      display: flex
+
+  .home.navigation
+    +grid-column(10)
+    display: flex
+    flex-direction: column
+    ul
+      list-style: none
+      display: flex
+      flex-direction: row
+      justify-content: flex-end
+
+      li
+        margin: 0
+
+    .top-nav
+      ul
+        li
+          a
+            color: $pe-mid
+            text-decoration: none
+            font-size: .8rem
+            margin: 0 .3em
+          &:first-child
+            margin-right: 1.5em
+          i
+            margin-right: 0.5em
+    .main-nav
+      +grid-collapse
+      ul
+        display: flex
+        flex-direction: row
+        margin:  0
+        +breakpoint($mob-tab)
+        li
+          a
+            font-family: $stack-buttons
+            text-transform: uppercase
+            font-style: normal
+            font-size: .675em
+            color: $pe-light
+            text-decoration: none
+            position: relative
+            padding: 1.75em 2em 1.6em
+            z-index: 0
+            background: $pe-dark
+            line-height: 1
+            display: inline-block
+            vertical-align: middle
+            cursor: pointer
+            transition: all .6s cubic-bezier(0.19, 1, 0.22, 1)
+            border-right: 1px solid shade($pe-light, 75%)
+            &:hover
+              background: $pe-light
+              color: $pe-dark
+
+  +breakpoint($mob-tab)
+    +grid-column(1)
